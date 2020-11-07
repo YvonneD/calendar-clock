@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=BenchNine:wght@300&display=swap');
+*{
+    box-sizing: border-box;
+}
+:root{
+    --main-color:#557571;
+    --second-color:#d49a89;
+    --third-color:#f7d1ba;
+    --fourth-color:#f4f4f4;
+}
+body{
+    font-family: 'BenchNine', sans-serif;
+    background: #DAE2F8;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #D6A4A4, #DAE2F8);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #D6A4A4, #DAE2F8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+/*clock*/
+.calendar-clock{
+    width: 500px;
+    height: 500px;
+    background-color: #f4f4f4;
+    border-radius: 50%;
+    position: relative;
+    box-shadow:0 0 15px 15px rgba(0, 0, 0, 0.6);
+}
+.calendar-clock::after{
+    content: '';
+    width: 15px;
+    height: 15px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.circle{
+    position: absolute;
+    left: -10px;
+    top: -10px;
+    width: 520px;
+    height: 520px;
+    border:3px solid #f4f4f4;
+    border-radius: 50%;
+}
+/*numbers*/
+
+.numbers-outside .number{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: rotate(var(--rotation));
+}
+.numbers-outside .number1{
+    --rotation:15deg
+}
+.numbers-outside .number2{
+    --rotation:30deg
+}
+.numbers-outside .number3{
+    --rotation:45deg
+}
+.numbers-outside .number4{
+    --rotation:60deg
+}
+.numbers-outside .number5{
+    --rotation:75deg
+}
+.numbers-outside .number6{
+    --rotation:90deg
+}
+.numbers-outside .number7{
+    --rotation:105deg
+}
+.numbers-outside .number8{
+    --rotation:120deg
+}
+.numbers-outside .number9{
+    --rotation:135deg
+}
+.numbers-outside .number10{
+    --rotation:150deg
+}
+.numbers-outside .number11{
+    --rotation:165deg
+}
+.numbers-outside .number12{
+    --rotation:180deg
+}
+.numbers-outside .number13{
+    --rotation:195deg
+}
+.numbers-outside .number14{
+    --rotation:210deg
+}
+.numbers-outside .number15{
+    --rotation:225deg
+}
+.numbers-outside .number16{
+    --rotation:240deg
+}
+.numbers-outside .number17{
+    --rotation:255deg
+}
+.numbers-outside .number18{
+    --rotation:270deg
+}
+.numbers-outside .number19{
+    --rotation:285deg
+}
+.numbers-outside .number20{
+    --rotation:300deg
+}
+.numbers-outside .number21{
+    --rotation:315deg
+}
+.numbers-outside .number22{
+    --rotation:330deg
+}
+.numbers-outside .number23{
+    --rotation:345deg
+}
+.numbers-outside .number24{
+    --rotation:360deg
+}
+.numbers-inside .number{
+    --rotation:30;
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%,-50%) rotate(var(--rotation));
+}
+.numbers-inside .number1{
+    --rotation:30deg
+}
+.numbers-inside .number2{
+    --rotation:60deg
+}
+.numbers-inside .number3{
+    --rotation:90deg
+}
+.numbers-inside .number4{
+    --rotation:120deg
+}
+.numbers-inside .number5{
+    --rotation:150deg
+}
+.numbers-inside .number6{
+    --rotation:180deg
+}
+.numbers-inside .number7{
+    --rotation:210deg
+}
+.numbers-inside .number8{
+    --rotation:240deg
+}
+.numbers-inside .number9{
+    --rotation:270deg
+}
+.numbers-inside .number10{
+    --rotation:300deg
+}
+.numbers-inside .number11{
+    --rotation:330deg
+}
+.numbers-inside .number12{
+    --rotation:360deg
+}
+/*hands*/
+.hand{
+    --rotation:0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom;
+    transform: translateX(-50%) rotate(calc(var(--rotation)*1deg));
+    width:10px;
+    height: 30%;
+    border: 1px solid rgb(92, 92, 92);
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+}
+.hour{
+    background-color: var(--main-color);    
+}
+.minute{
+    background-color: var(--second-color);
+    width:8px;
+    height: 35%;
+}
+.second{
+    background-color: var(--third-color);
+    width:5px;
+    height: 40%;
+}
+/*button*/
+#setting{
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%,-65%);
+    border-radius: 20px;
+    padding: 5px 10px;
+    outline: none;
+    cursor: pointer;
+    font-family: 'BenchNine', sans-serif;
+    font-size: 1.5rem;
+    opacity: 0;
+    transition: 0.3s;
+}
+#setting:hover,#setting:active{
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
+    background: var(--main-color);
+    color: var(--fourth-color);
+}
+.calendar-clock:hover #setting{
+    opacity: 1;
+}
